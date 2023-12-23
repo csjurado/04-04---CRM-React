@@ -3,8 +3,9 @@ import ReactDOM from 'react-dom/client'
 import './index.css'
 import { createBrowserRouter , RouterProvider } from 'react-router-dom';
 import Layout from './components/Layout'
-import NuevoCliente, { action as NuevoClienteAction } from './components/pages/NuevoCliente';
-import Index, { loader as clientesLoader } from './components/pages/Index';
+import NuevoCliente, { action as NuevoClienteAction } from './pages/NuevoCliente';
+// import Index, { loader as clientesLoader } from './components/pages/Index';
+import Index , {loader as clientesLoader} from './pages/Index';
 const router = createBrowserRouter([
   {
     path:'/',

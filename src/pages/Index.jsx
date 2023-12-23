@@ -1,42 +1,42 @@
 import { useLoaderData } from 'react-router-dom';
-import Cliente from '../Cliente';
+import Cliente from '../components/Cliente';
 
 export function loader (){
     const clientes = [
         {
             id: 1,
-            nombre: 'Juan',
-            telefono: 102013313,
-            email: "juan@juan.com",
-            empresa: 'Codigo Con Juan'
+            nombre: 'Juan Perez',
+            telefono: 983498064,
+            email: "juan.perez@netlife.ec",
+            empresa: 'Netlife'
         },
         {
             id: 2,
-            nombre: 'Karen',
-            telefono: 138198313,
-            email: "karen@juan.com",
-            empresa: 'Codigo Con Juan'
+            nombre: 'Maria Salazar',
+            telefono: 973499063,
+            email: "maria.salarzar@cnt.ec",
+            empresa: 'CNT'
         },
         {
             id: 3,
-            nombre: 'Josue',
-            telefono: 31983913,
-            email: "josue@juan.com",
-            empresa: 'Codigo Con Juan'
+            nombre: 'Josue Espinoza',
+            telefono: 983478069,
+            email: "jespinoza@bancopichincha.fin.ec",
+            empresa: 'Banco Pichincha'
         },
         {
             id: 4,
-            nombre: 'Miguel',
-            telefono: 319381983,
-            email: "miguel@juan.com",
-            empresa: 'Codigo Con Juan'
+            nombre: 'Miguel Carapaz',
+            telefono: 983498064,
+            email: "miguel.carapaz@gmail.com",
+            empresa: 'Dev Tecnology'
         },
         {
             id: 5,
-            nombre: 'Pedro',
-            telefono: 1398198938,
-            email: "pedro@juan.com",
-            empresa: 'Codigo Con Juan'
+            nombre: 'Mayra Jara',
+            telefono: 983494447,
+            email: "mjara01@tesalia.com.ec",
+            empresa: 'Tesalia'
         },
     ];
     return clientes;
@@ -51,13 +51,13 @@ function Index() {
     console.log('====================================');
   return (
     <>
-        <h1 className='font-black text-4xl text-sky-900'> Clientes </h1>
-        <p className='mt-3'> Administra tus clientes</p>
+        <h1 className='font-black text-4xl text-sky-900'> Empresas </h1>
+        <p className='mt-3'> Administra tus usuarios - empresas</p>
         {datos.length ? (
             <table className='w-full bg-white shadow mt-5 table-auto'>
                 <thead className=' bg-slate-700  text-white'>
                     <tr>
-                        <th className=' p-2 '> Cliente </th>
+                        <th className=' p-2 '> Usuario </th>
                         <th className=' p-2 '> Contacto  </th>
                         <th className=' p-2 '> Acciones  </th>
                     </tr>
