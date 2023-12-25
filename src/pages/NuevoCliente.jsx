@@ -1,15 +1,14 @@
 import React from 'react'
-import { useNavigate ,Form , useActionData } from 'react-router-dom'
+import { useNavigate ,Form , useActionData , redirect} from 'react-router-dom'
 import Formulario from '../components/Formulario';
 import Error from '../components/Error';
+import { agregarClientes } from '../data/clientes.jsx'
  
 export async function action({request}){
   const formData = await request.formData()
   const datos = Object.fromEntries(formData)
   const errores = [];
   const email = formData.get('email');
-  
-  // console.log(datos);
 
   //Validación 
   if(Object.values(datos).includes('')){
@@ -23,18 +22,20 @@ export async function action({request}){
   }
 
   // Retornar datos si hay errores
-  if(Object.keys(errores.length)){
-    console.log('Si hay errores');
-    console.log(Object.keys(errores));
+  if(Object.keys(errores).length){
+    //console.log('Si hay errores');
+    //console.log(Object.keys(errores));
     return errores;
   }
-  return datos
+  //Agregamos los clientes 
+  await agregarClientes(datos)
+
+  return redirect('/')
 }
 
 function NuevoCliente() {
   const errores = useActionData();
   const navigate = useNavigate();
-  console.log(errores);
   // const handleClick = () => {
   //   navigate("/");
   // };
@@ -64,8 +65,6 @@ function NuevoCliente() {
               value='Registrar Cliente'
             />
         </Form>
-         
-     
       </div>
    </>
   )

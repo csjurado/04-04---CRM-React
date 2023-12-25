@@ -1,0 +1,19 @@
+{
+  "clientes": [
+    {
+      "id": 1,
+      "nombre": "Juan Perez",
+      "telefono": 983498064,
+      "email": "juan.perez@netlife.ec",
+      "empresa": "Netlife"
+    },
+    {
+      "nombre": "Carlos Jurado",
+      "empresa": "Codesarrollo",
+      "email": "carlos.jurado@epn.edu.ec",
+      "telefono": "09839900005",
+      "notas": "Esta es una prueba ",
+      "id": 2
+    }
+  ]
+}

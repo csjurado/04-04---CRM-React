@@ -1,54 +1,17 @@
 import { useLoaderData } from 'react-router-dom';
-import Cliente from '../components/Cliente';
+import Cliente from '../components/Cliente.jsx';
+import { obtenerClientes } from '../data/clientes.jsx'
 
 export function loader (){
-    const clientes = [
-        {
-            id: 1,
-            nombre: 'Juan Perez',
-            telefono: 983498064,
-            email: "juan.perez@netlife.ec",
-            empresa: 'Netlife'
-        },
-        {
-            id: 2,
-            nombre: 'Maria Salazar',
-            telefono: 973499063,
-            email: "maria.salarzar@cnt.ec",
-            empresa: 'CNT'
-        },
-        {
-            id: 3,
-            nombre: 'Josue Espinoza',
-            telefono: 983478069,
-            email: "jespinoza@bancopichincha.fin.ec",
-            empresa: 'Banco Pichincha'
-        },
-        {
-            id: 4,
-            nombre: 'Miguel Carapaz',
-            telefono: 983498064,
-            email: "miguel.carapaz@gmail.com",
-            empresa: 'Dev Tecnology'
-        },
-        {
-            id: 5,
-            nombre: 'Mayra Jara',
-            telefono: 983494447,
-            email: "mjara01@tesalia.com.ec",
-            empresa: 'Tesalia'
-        },
-    ];
-    return clientes;
+   const datos = obtenerClientes()
+   //    Siempre debe haber un return en los loader
+   return datos   
 }
 import React from 'react'
 
 function Index() {
-
     const datos = useLoaderData();
-    console.log('====================================');
-    console.log(datos);
-    console.log('====================================');
+    
   return (
     <>
         <h1 className='font-black text-4xl text-sky-900'> Empresas </h1>
